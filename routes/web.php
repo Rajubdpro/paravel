@@ -29,10 +29,9 @@ use App\Http\Controllers\HomeController;
  */
     Route::get('/users', [HomeController::class, 'users'])->name('users.list');
     Route::get('/user/delete/{id}', [HomeController::class, 'userDelete'])->name('users.delete');
-    Route::get ('/users/edit/{id}', [HomeController::class, 'userEdit'])->name('users.edit');
-    Route::post('/user/update', [HomeController::class, 'userUpdate'])->name('users.update');
-
-});
+    Route::get ('/users/show/{id}', [HomeController::class, 'userEdit'])->name('users.edit');
+    Route::put('/user/update/{id}', [HomeController::class, 'userUpdate'])->name('users.update');
+    });
 
 
 require __DIR__.'/auth.php';

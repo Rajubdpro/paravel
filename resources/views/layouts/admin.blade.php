@@ -577,7 +577,7 @@
 												<i data-feather="log-out"></i>
 												<span>Log Out</span>
 											</button>
-                                            <form>
+                                            </form>
 										</li>
 									</ul>
 								</div>

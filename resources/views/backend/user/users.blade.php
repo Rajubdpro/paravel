@@ -1,7 +1,7 @@
 @extends('layouts.admin');
 @section('content')
  <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <div class="card">
             <div class="card-header">
                 <h3 class="d-inline">Users List</h3>
@@ -27,7 +27,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                            <a href="{{route('users.edit', $user->id)}}" class="btn btn-info">Edit</a>
+{{--                            <a href="{{route('users.edit', $user->id)}}" class="btn btn-info text-white">Edit</a>--}}
                             @if(auth()->user()->id != $user->id)
                                 <a href="{{Route('users.delete', $user->id)}}" class="btn btn-danger">Delete</a>
                             @endif

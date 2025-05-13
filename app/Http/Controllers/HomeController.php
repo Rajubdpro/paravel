@@ -35,7 +35,6 @@ class HomeController extends Controller
         if (auth()->user()->id == $id) {
             return redirect()->back()->with('error', 'You can not delete yourself');
         }
-
         $User = User::find($id);
 
         if (!$User) {
@@ -56,10 +55,19 @@ class HomeController extends Controller
     }
 
     // Update User
-    function userUpdate() {
-        echo "User Updated";
-        exit();
+    function userUpdate(Request $request, $id)
+    {
+        $User = User::find($id);
+
+        if (!$User) {
+            return redirect()->back()->with('error', 'User not found');
+        }
+
+        $User->update($request->all());
+        return redirect('/users')->with('success', 'Profile Updated Successfully');
+
     }
+
 
 
 }
